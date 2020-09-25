@@ -1,5 +1,5 @@
-; Using the REPL to experiment
-; ---------------------------------------------------------------------------------------------------------------------
+; I. Using the REPL to experiment ----------------------------------------------
+
 ; Most software development projects include a stage where you're not sure what
 ; needs to happen next. Perhaps you need to use a library or part of a library
 ; you've never touched before. Or perhaps you know what your input to a
