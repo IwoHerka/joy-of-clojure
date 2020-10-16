@@ -193,6 +193,9 @@
 ; 3. Has the following body: [fst foo bar more].
 ; In sum, the following call:
 ; (foo 1 {:foo 2 :bar 3} 4 5) should return: [1 2 3 (4 5)].
+(defn foo
+  [fst {:keys [foo bar]} & more]
+  [fst foo bar more])
 
 ; Exercise II: Map destructuring
 ; Given following map "m":
@@ -204,3 +207,5 @@
 ; 4. Save whole map as 'all'.
 ; 5. Extract value of :fiz under 'fiz' and specify that if not present,
 ; "fuzz" should be used.
+(let [{[first _ third & more] :foo baz :bar fiz :fiz :or {fiz "fuzz"} :as all} m]
+  [first third more baz fiz all])

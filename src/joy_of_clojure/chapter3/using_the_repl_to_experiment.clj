@@ -248,7 +248,7 @@ frame
 (.setSize frame (java.awt.Dimension. 500 500))
 
 ; Redefine gfx to get a fresh reference now that the frame is 500x500
-((def gfx (.getGraphics frame))
+(def gfx (.getGraphics frame))
 
 (doseq [[x y xor] (xors 500 500)]
   (.setColor gfx (java.awt.Color. xor xor xor))
@@ -258,7 +258,7 @@ frame
 ; explore what different functions look like. Try adding another parameter to
 ; xors so that you can pass in whatever function you'd like to look at. Because
 ; it's not just bit-xor anymore, change the name while you're at it:
-defn f-values [f xs ys]
+(defn f-values [f xs ys]
   (for [x (range xs) y (range ys)]
     [x y (rem (f x y) 256)]))
 
@@ -275,7 +275,7 @@ defn f-values [f xs ys]
 ; patterns emerge from the following:
 (draw-values bit-and 256 256)
 (draw-values + 256 256)
-(draw-values * 256 256)
+(draw-values * 500 500)
 (draw-values (fn [x y] x) 256 256)
 (draw-values (fn [x y] y) 256 256)
 (draw-values (fn [x y] (int (/ (+ x y) 2))) 256 256)
