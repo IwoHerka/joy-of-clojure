@@ -1,0 +1,25 @@
+version: '3.6'
+
+networks:
+  newsbreak:
+
+services:
+  lein:
+    image: clojure:lein
+    working_dir: "/joyofclojure"
+    volumes:
+      - "maven-cache:/root/.m2"
+      - ".:/joyofclojure"
+    environment:
+      LEIN_REPL_HOST: "0.0.0.0"
+      LEIN_REPL_PORT: 6663
+    expose:
+      - "6663"
+    ports:
+      - "6663:6663"
+    command: [ "lein", "repl", ":headless" ]
+    networks:
+      newsbreak:
+
+volumes:
+  maven-cache:
